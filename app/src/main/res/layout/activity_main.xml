@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@color/backgroundBlackColor">
+
+        <ImageView
+            android:id="@+id/aaa"
+            android:layout_width="@dimen/auth_page_logo_size"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/auth_page_top_logo"
+            android:layout_marginTop="@dimen/margin_top_auth_page_logo"
+            />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_top_auth_layout_container"
+        android:background="@drawable/auth_layout_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aaa"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:id="@+id/auth_layout_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/auth_layout_items_margin_left"
+            android:layout_marginTop="@dimen/auth_layout_items_margin_top"
+            android:text="@string/auth_layout_title_txt"
+            android:textColor="@color/title_text_black"
+            android:textSize="@dimen/auth_layout_title_font_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/auth_layout_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/auth_layout_subtitle_txt"
+            android:textColor="@color/title_text_black"
+            android:textSize="@dimen/auth_layout_subtitle_font_size"
+            app:layout_constraintStart_toStartOf="@+id/auth_layout_title"
+            app:layout_constraintTop_toBottomOf="@id/auth_layout_title" />
+
+        <EditText
+            android:id="@+id/email_input_field"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/auth_fields_height"
+            android:layout_marginStart="@dimen/auth_layout_items_margin_left"
+            android:layout_marginEnd="@dimen/auth_layout_items_margin_left"
+            app:layout_constraintTop_toBottomOf="@id/auth_layout_subtitle"
+            app:layout_constraintStart_toStartOf="@id/auth_layout_subtitle"
+            android:layout_marginTop="@dimen/auth_layout_items_margin_between"
+            android:background="@drawable/auth_fields_bg"
+            android:hint="@string/email_field_hint_txt"
+            android:textColorHint="@color/auth_page_hints_color"
+            android:textColor="@color/title_text_black"
+            android:inputType="textEmailAddress"
+            android:paddingStart="@dimen/auth_fields_txt_padding"
+            android:paddingEnd="@dimen/auth_fields_txt_padding"
+            />
+
+        <EditText
+            android:id="@+id/pass_input_field"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/auth_fields_height"
+            android:layout_marginStart="@dimen/auth_layout_items_margin_left"
+            android:layout_marginEnd="@dimen/auth_layout_items_margin_left"
+            app:layout_constraintTop_toBottomOf="@id/email_input_field"
+            app:layout_constraintStart_toStartOf="@id/email_input_field"
+            android:layout_marginTop="@dimen/auth_layout_items_margin_between"
+            android:background="@drawable/auth_fields_bg"
+            android:hint="@string/pass_field_hint_txt"
+            android:textColorHint="@color/auth_page_hints_color"
+            android:textColor="@color/title_text_black"
+            android:inputType="textPassword"
+            android:paddingStart="@dimen/auth_fields_txt_padding"
+            android:paddingEnd="@dimen/auth_fields_txt_padding"
+
+            />
+
+        <TextView
+            android:id="@+id/forgot_pass_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/pass_input_field"
+            app:layout_constraintStart_toStartOf="@id/pass_input_field"
+            android:layout_marginTop="22dp"
+            android:text="@string/forgot_pass_txt"
+            android:textColor="@color/auth_page_clickable_texts_color"
+            android:textSize="@dimen/auth_page_clickable_texts_size"
+        />
+
+        <Button
+            android:id="@+id/sign_in_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/auth_fields_height"
+            android:layout_marginStart="@dimen/auth_layout_items_margin_left"
+            android:layout_marginEnd="@dimen/auth_layout_items_margin_left"
+            app:layout_constraintTop_toBottomOf="@id/pass_input_field"
+            app:layout_constraintStart_toStartOf="@id/pass_input_field"
+            android:layout_marginTop="@dimen/auth_layout_items_margin_between"
+            android:background="@drawable/sign_in_bg"
+            android:textColor="@color/backgroundWhite"
+            android:text="Sign in"
+            />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
