@@ -1,0 +1,8 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item  android:top="@dimen/auth_fields_floating_hint_margin" android:bottom="@dimen/auth_fields_floating_hint_margin">
+        <shape >
+            <solid android:color="@color/auth_fields_color"/>
+            <corners android:radius="16dp"/>
+        </shape>
+    </item>
+</layer-list>

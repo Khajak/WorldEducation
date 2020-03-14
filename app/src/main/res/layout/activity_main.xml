@@ -1,44 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:background="@color/backgroundBlackColor">
 
-        <ImageView
-            android:id="@+id/aaa"
-            android:layout_width="@dimen/auth_page_logo_size"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:src="@drawable/auth_page_top_logo"
-            android:layout_marginTop="@dimen/margin_top_auth_page_logo"
-            />
+    android:background="@color/backgroundBlackColor"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_top_auth_layout_container"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+    <ImageView
+        android:id="@+id/top_logo"
+        android:layout_width="@dimen/auth_page_logo_size"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/auth_page_logo_margin_vertical"
+        android:adjustViewBounds="true"
+        android:src="@drawable/auth_page_top_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/auth_page_logo_margin_vertical"
         android:background="@drawable/auth_layout_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/aaa"
+        app:layout_constraintTop_toBottomOf="@id/top_logo"
         app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/auth_layout_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/auth_layout_items_margin_left"
+            android:layout_marginStart="@dimen/auth_layout_items_margin_horizontal"
             android:layout_marginTop="@dimen/auth_layout_items_margin_top"
             android:text="@string/auth_layout_title_txt"
-            android:textColor="@color/title_text_black"
+            android:textColor="@color/texts_color_black"
             android:textSize="@dimen/auth_layout_title_font_size"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -49,78 +61,244 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:text="@string/auth_layout_subtitle_txt"
-            android:textColor="@color/title_text_black"
+            android:textColor="@color/texts_color_black"
             android:textSize="@dimen/auth_layout_subtitle_font_size"
             app:layout_constraintStart_toStartOf="@+id/auth_layout_title"
             app:layout_constraintTop_toBottomOf="@id/auth_layout_title" />
 
-        <EditText
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email_input_field"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/auth_fields_height"
-            android:layout_marginStart="@dimen/auth_layout_items_margin_left"
-            android:layout_marginEnd="@dimen/auth_layout_items_margin_left"
-            app:layout_constraintTop_toBottomOf="@id/auth_layout_subtitle"
-            app:layout_constraintStart_toStartOf="@id/auth_layout_subtitle"
-            android:layout_marginTop="@dimen/auth_layout_items_margin_between"
-            android:background="@drawable/auth_fields_bg"
-            android:hint="@string/email_field_hint_txt"
-            android:textColorHint="@color/auth_page_hints_color"
-            android:textColor="@color/title_text_black"
-            android:inputType="textEmailAddress"
-            android:paddingStart="@dimen/auth_fields_txt_padding"
-            android:paddingEnd="@dimen/auth_fields_txt_padding"
-            />
+            android:layout_height="wrap_content"
 
-        <EditText
+            android:layout_marginStart="@dimen/auth_layout_items_margin_horizontal"
+            android:layout_marginTop="@dimen/email_field_margin_top"
+            android:layout_marginEnd="@dimen/auth_layout_items_margin_horizontal"
+            android:textColorHint="@color/auth_page_hints_color"
+            app:hintTextAppearance="@style/HintTextStyle"
+
+            app:layout_constraintStart_toStartOf="@id/auth_layout_subtitle"
+            app:layout_constraintTop_toBottomOf="@id/auth_layout_subtitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/auth_fields_height"
+                android:background="@drawable/auth_input_layer_bg"
+                android:hint="@string/email_field_hint_txt"
+                android:textSize="@dimen/auth_fields_hint_txt_font_size"
+
+                android:inputType="textEmailAddress"
+                android:paddingStart="12dp"
+                android:paddingTop="@dimen/auth_fields_floating_hint_margin"
+                android:paddingBottom="@dimen/auth_fields_floating_hint_margin"
+
+
+                android:textColor="@color/texts_color_black" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/pass_input_field"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/auth_fields_height"
-            android:layout_marginStart="@dimen/auth_layout_items_margin_left"
-            android:layout_marginEnd="@dimen/auth_layout_items_margin_left"
-            app:layout_constraintTop_toBottomOf="@id/email_input_field"
-            app:layout_constraintStart_toStartOf="@id/email_input_field"
-            android:layout_marginTop="@dimen/auth_layout_items_margin_between"
-            android:background="@drawable/auth_fields_bg"
-            android:hint="@string/pass_field_hint_txt"
-            android:textColorHint="@color/auth_page_hints_color"
-            android:textColor="@color/title_text_black"
-            android:inputType="textPassword"
-            android:paddingStart="@dimen/auth_fields_txt_padding"
-            android:paddingEnd="@dimen/auth_fields_txt_padding"
+            android:layout_height="wrap_content"
 
-            />
+            android:layout_marginStart="@dimen/auth_layout_items_margin_horizontal"
+            android:layout_marginTop="@dimen/pass_field_margin_top"
+            android:layout_marginEnd="@dimen/auth_layout_items_margin_horizontal"
+            android:textColorHint="@color/auth_page_hints_color"
+            app:hintTextAppearance="@style/HintTextStyle"
+
+            app:layout_constraintStart_toStartOf="@id/email_input_field"
+            app:layout_constraintTop_toBottomOf="@id/email_input_field"
+
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/auth_page_hints_color">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/auth_fields_height"
+                android:background="@drawable/auth_input_layer_bg"
+                android:hint="@string/pass_field_hint_txt"
+                android:textSize="@dimen/auth_fields_hint_txt_font_size"
+                android:inputType="textPassword"
+                android:paddingStart="12dp"
+                android:paddingTop="@dimen/auth_fields_floating_hint_margin"
+                android:paddingBottom="@dimen/auth_fields_floating_hint_margin"
+
+
+                android:textColor="@color/texts_color_black" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/forgot_pass_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/pass_input_field"
-            app:layout_constraintStart_toStartOf="@id/pass_input_field"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="@dimen/auth_layout_items_margin_vertical"
             android:text="@string/forgot_pass_txt"
             android:textColor="@color/auth_page_clickable_texts_color"
             android:textSize="@dimen/auth_page_clickable_texts_size"
-        />
+            app:layout_constraintStart_toStartOf="@id/pass_input_field"
+            app:layout_constraintTop_toBottomOf="@id/pass_input_field" />
 
         <Button
             android:id="@+id/sign_in_btn"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/auth_fields_height"
-            android:layout_marginStart="@dimen/auth_layout_items_margin_left"
-            android:layout_marginEnd="@dimen/auth_layout_items_margin_left"
-            app:layout_constraintTop_toBottomOf="@id/pass_input_field"
-            app:layout_constraintStart_toStartOf="@id/pass_input_field"
-            android:layout_marginTop="@dimen/auth_layout_items_margin_between"
+            android:layout_height="@dimen/auth_btn_height"
+            android:layout_marginStart="@dimen/auth_layout_items_margin_horizontal"
+            android:layout_marginTop="@dimen/auth_layout_items_margin_vertical"
+            android:layout_marginEnd="@dimen/auth_layout_items_margin_horizontal"
             android:background="@drawable/sign_in_bg"
+
+            android:text="@string/sign_in_txt"
             android:textColor="@color/backgroundWhite"
-            android:text="Sign in"
-            />
+            app:layout_constraintStart_toStartOf="@id/pass_input_field"
+            app:layout_constraintTop_toBottomOf="@id/forgot_pass_txt" />
+
+        <LinearLayout
+            android:id="@+id/or_separator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/sign_in_btn"
+            android:layout_marginStart="@dimen/separator_line_margin_horizontal"
+            android:layout_marginTop="@dimen/auth_layout_items_margin_vertical"
+            android:layout_marginEnd="@dimen/separator_line_margin_horizontal"
+            app:layout_constraintStart_toStartOf="@+id/sign_in_btn"
+            >
+
+            <View
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separator_layout_color"
+                android:layout_gravity="center"
+                />
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/or_txt"
+                android:gravity="center"
+                android:textColor="@color/separator_layout_color"
+                android:textSize="@dimen/auth_fields_hint_txt_font_size"
+                android:layout_marginHorizontal="20dp"
+                />
+            <View
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/separator_layout_color"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/social_icons_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/social_icons_layout_height"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/or_separator"
+            android:layout_marginTop="@dimen/auth_layout_items_margin_vertical"
+            android:layout_marginEnd="@dimen/separator_line_margin_horizontal"
+            android:layout_marginStart="@dimen/separator_line_margin_horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_fb"
+                android:layout_marginHorizontal="@dimen/social_icons_margin_horizontal"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_in"/>
+            <ImageView
+                android:layout_marginHorizontal="@dimen/social_icons_margin_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_gm"
+                />
+
+        </LinearLayout>
 
 
+        <LinearLayout
+            android:id="@+id/have_no_account_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/social_icons_layout"
+            android:layout_marginTop="@dimen/auth_layout_items_margin_vertical"
+            android:layout_marginEnd="@dimen/separator_line_margin_horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/have_no_account_txt"
+                android:textColor="@color/texts_color_black"
+                android:textSize="@dimen/auth_layout_subtitle_font_size"/>
+
+            <TextView
+                android:layout_marginHorizontal="4dp"
+                android:id="@+id/sing_up_clickable_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_up_txt"
+                android:textColor="@color/auth_page_clickable_texts_color"
+                android:textSize="@dimen/auth_layout_subtitle_font_size"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/have_no_account_layout"
+            android:layout_marginTop="@dimen/auth_layout_items_margin_vertical"
+            android:layout_marginEnd="@dimen/separator_line_margin_horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/continue_as_txt"
+                android:textColor="@color/texts_color_black"
+                android:textSize="@dimen/auth_layout_subtitle_font_size"/>
+
+            <TextView
+                android:layout_marginHorizontal="4dp"
+                android:id="@+id/guest_clickable_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/guest_txt"
+                android:textColor="@color/auth_page_clickable_texts_color"
+                android:textSize="@dimen/auth_layout_subtitle_font_size"/>
+
+        </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

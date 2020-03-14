@@ -1,29 +1,42 @@
 <resources>
-    <string name="app_name">WorldEducation</string>
-    <dimen name="margin_top_auth_page_logo">20dp</dimen>
-    <dimen name="margin_top_auth_layout_container">20dp</dimen>
-    <dimen name="auth_page_logo_size">160dp</dimen>
 
-    <dimen name="auth_layout_title_font_size">26sp</dimen>
-    <string name="auth_layout_title_txt">Login First</string>
 
+    <!-- Dimensions  -->
+    <dimen name="auth_page_logo_margin_vertical">50dp</dimen>
+    <dimen name="auth_page_logo_size">150dp</dimen>
     <dimen name="auth_layout_subtitle_font_size">14sp</dimen>
-    <string name="auth_layout_subtitle_txt">Hello There, sign in to continue!</string>
-
-    <dimen name="auth_layout_items_margin_left">38dp</dimen>
+    <dimen name="auth_layout_title_font_size">26sp</dimen>
+    <dimen name="auth_layout_items_margin_horizontal">38dp</dimen>
+    <dimen name="separator_line_margin_horizontal">14dp</dimen>
+    <dimen name="auth_field_margin_horizontal">28dp</dimen>
     <dimen name="auth_layout_items_margin_top">34dp</dimen>
-    <dimen name="auth_layout_items_margin_between">68dp</dimen>
-
-
-    <string name="email_field_hint_txt">Username or email</string>
-    <string name="pass_field_hint_txt">Password</string>
-    <dimen name="auth_fields_hint_txt_font_size">20sp</dimen>
-    <dimen name="auth_fields_height">47sp</dimen>
+    <dimen name="auth_layout_items_margin_vertical">25dp</dimen>
+    <dimen name="pass_field_margin_top">20dp</dimen>
+    <dimen name="email_field_margin_top">35dp</dimen>
+    <dimen name="auth_fields_hint_txt_font_size">14sp</dimen>
+    <dimen name="auth_fields_height">65dp</dimen>
+    <dimen name="auth_btn_height">45dp</dimen>
     <dimen name="auth_fields_txt_font_size">20sp</dimen>
     <dimen name="auth_fields_txt_padding">18dp</dimen>
-
-    <string name="forgot_pass_txt">Forgot Password?</string>
+    <dimen name="auth_fields_floating_hint_margin">8dp</dimen>
+    <dimen name="social_icons_layout_height">32dp</dimen>
+    <dimen name="social_icons_margin_horizontal">15dp</dimen>
     <dimen name="auth_page_clickable_texts_size">14sp</dimen>
+
+    <!--     String Names        -->
+    <string name="app_name">WorldEducation</string>
+    <string name="auth_layout_title_txt">Login First</string>
+    <string name="auth_layout_subtitle_txt">Hello There, sign in to continue!</string>
+    <string name="have_no_account_txt">Don\'t have an account?</string>
+    <string name="continue_as_txt">Continue as</string>
+    <string name="guest_txt">Guest</string>
+    <string name="sign_up_txt">Sign Up</string>
+    <string name="sign_in_txt">Sign in</string>
+    <string name="or_txt">Sign in</string>
+    <string name="email_field_hint_txt">Username or email</string>
+    <string name="pass_field_hint_txt">Password</string>
+    <string name="forgot_pass_txt">Forgot Password?</string>
+
 
 
 </resources>

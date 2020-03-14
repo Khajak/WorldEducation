@@ -4,10 +4,13 @@
     <color name="colorPrimaryDark">#21242B</color>
     <color name="colorAccent">#21242B</color>
     <color name="backgroundBlackColor">#21242B</color>
-    <color name="title_text_black">#252022</color>
+    <color name="texts_color_black">#252022</color>
     <color name="backgroundWhite">#FFFFFF</color>
     <color name="auth_page_hints_color">#BDBEBD</color>
+    <color name="separator_layout_color">#CFCFCF</color>
     <color name="auth_fields_color">#F7F6F1</color>
+
+    <color name="auth_field_error_color">#FB1100</color>
     <color name="sign_in_btn_color">#EBC200</color>
     <color name="auth_page_clickable_texts_color">#AE942D</color>
 </resources>
